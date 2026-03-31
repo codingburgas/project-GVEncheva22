@@ -16,6 +16,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<project_GVEncheva22.Services.ITaskService, project_GVEncheva22.Services.TaskService>();
+builder.Services.AddScoped<project_GVEncheva22.Services.IBoardService, project_GVEncheva22.Services.BoardService>();
 
 var app = builder.Build();
 
