@@ -44,4 +44,23 @@ app.MapControllerRoute(
 
 app.MapRazorPages();
 
+// Seed roles
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await SeedRolesAsync(roleManager);
+}
+
 app.Run();
+
+async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
+{
+    if (!await roleManager.RoleExistsAsync("Admin"))
+    {
+        await roleManager.CreateAsync(new IdentityRole("Admin"));
+    }
+    if (!await roleManager.RoleExistsAsync("User"))
+    {
+        await roleManager.CreateAsync(new IdentityRole("User"));
+    }
+}
