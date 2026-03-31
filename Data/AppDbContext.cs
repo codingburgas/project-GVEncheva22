@@ -18,7 +18,32 @@ namespace project_GVEncheva22.Data
         {
             base.OnModelCreating(builder);
 
-            // Additional configurations can be added here if needed
+            // ApplicationUser -> Board (1-M)
+            builder.Entity<ApplicationUser>()
+                .HasMany(u => u.Boards)
+                .WithOne(b => b.User)
+                .HasForeignKey(b => b.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Board -> TaskItem (1-M)
+            builder.Entity<Board>()
+                .HasMany(b => b.TaskItems)
+                .WithOne(t => t.Board)
+                .HasForeignKey(t => t.BoardId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Configure required fields and lengths via fluent API as backup
+            builder.Entity<Board>(entity =>
+            {
+                entity.Property(x => x.Title).IsRequired().HasMaxLength(100);
+            });
+
+            builder.Entity<TaskItem>(entity =>
+            {
+                entity.Property(x => x.Title).IsRequired().HasMaxLength(200);
+                entity.Property(x => x.Description).HasMaxLength(1000);
+                entity.Property(x => x.Deadline).HasColumnType("datetime");
+            });
         }
     }
 }
