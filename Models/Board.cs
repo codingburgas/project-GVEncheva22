@@ -12,5 +12,8 @@ namespace project_GVEncheva22.Models
         public string UserId { get; set; }
 
         public ApplicationUser User { get; set; }
+
+        // Navigation property for related TaskItems
+        public ICollection<TaskItem> TaskItems { get; set; } = new List<TaskItem>();
     }
 }
