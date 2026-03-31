@@ -50,6 +50,7 @@ public class TaskController : Controller
             await _taskService.CreateTaskAsync(task);
             return RedirectToAction("Index");
         }
+        ViewBag.BoardsSelectList = new SelectList(await _boardService.GetAllBoardsAsync(), "Id", "Title");
         return View(task);
     }
 
@@ -78,6 +79,7 @@ public class TaskController : Controller
             await _taskService.UpdateTaskAsync(task);
             return RedirectToAction("Index");
         }
+        ViewBag.BoardsSelectList = new SelectList(await _boardService.GetAllBoardsAsync(), "Id", "Title");
         return View(task);
     }
 

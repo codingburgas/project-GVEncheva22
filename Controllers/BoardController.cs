@@ -42,7 +42,12 @@ public class BoardController : Controller
     [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Create(Board board)
     {
-        board.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null)
+        {
+            return Unauthorized();
+        }
+        board.UserId = userId;
         if (ModelState.IsValid)
         {
             await _boardService.CreateBoardAsync(board);
@@ -70,7 +75,12 @@ public class BoardController : Controller
         {
             return BadRequest();
         }
-        board.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null)
+        {
+            return Unauthorized();
+        }
+        board.UserId = userId;
         if (ModelState.IsValid)
         {
             await _boardService.UpdateBoardAsync(board);
