@@ -71,4 +71,22 @@ public class BoardController : Controller
         }
         return View(board);
     }
+
+    public async Task<IActionResult> Delete(int id)
+    {
+        var board = await _boardService.GetBoardByIdAsync(id);
+        if (board == null)
+        {
+            return NotFound();
+        }
+        return View(board);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        await _boardService.DeleteBoardAsync(id);
+        return RedirectToAction("Index");
+    }
 }
