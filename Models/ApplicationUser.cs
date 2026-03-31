@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace project_GVEncheva22.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        // Add custom properties here if needed (e.g. DisplayName, FullName, etc.)
+        [StringLength(100)]
         public string? DisplayName { get; set; }
 
         // Navigation property for related Boards

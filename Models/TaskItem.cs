@@ -17,6 +17,7 @@ namespace project_GVEncheva22.Models
         [Required]
         public Status Status { get; set; }
 
+        [DataType(DataType.DateTime)]
         public DateTime? Deadline { get; set; }
 
         // Relations
