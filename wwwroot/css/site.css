@@ -138,6 +138,47 @@ small, .text-muted {
   min-width: 140px;
 }
 
+/* Kanban Board Styles */
+.kanban-board {
+  min-height: 70vh;
+}
+
+.kanban-column {
+  border: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.kanban-header {
+  border-bottom: 2px solid #e9ecef;
+  padding: 1rem 1.25rem;
+}
+
+.kanban-body {
+  background-color: #f8f9fa;
+  min-height: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.kanban-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kanban-card {
+  border: 1px solid #e9ecef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.kanban-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
 /* Modern progress bars */
 .progress {
   border-radius: 1rem;
