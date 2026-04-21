@@ -573,6 +573,26 @@ textarea.form-control:focus {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+/* Create Task Button */
+.btn-create-task {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.btn-create-task:hover:not(:disabled) {
+  background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+  box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+  transform: translateY(-3px);
+}
+
+.btn-create-task:active:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(40, 167, 69, 0.3);
+}
+
 /* Modern progress bars */
 .progress {
   border-radius: 1rem;

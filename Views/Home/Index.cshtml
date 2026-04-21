@@ -2,6 +2,16 @@
     ViewData["Title"] = "Dashboard";
 }
 
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading"><i class="bi bi-info-circle-fill"></i> Welcome!</h4>
+        <p>To get started, please <a href="/Identity/Account/Login" class="alert-link"><strong>log in</strong></a> to your account.</p>
+        <small>Don't have an account? <a href="/Identity/Account/Register" class="alert-link">Register here</a></small>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">

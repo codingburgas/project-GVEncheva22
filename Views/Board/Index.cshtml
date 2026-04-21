@@ -7,28 +7,27 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h1 class="text-primary">Boards</h1>
-                @if (User.IsInRole("Admin"))
-                {
-                    <a asp-action="Create" class="btn btn-success btn-lg">
-                        <i class="fas fa-plus"></i> Create New Board
-                    </a>
-                }
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h1 class="text-primary mb-1">Boards</h1>
+                    <p class="text-muted">Organize your projects into boards</p>
+                </div>
+                <a asp-action="Create" class="btn btn-success btn-lg btn-create-task">
+                    <i class="bi bi-plus-circle"></i> Create New Board
+                </a>
             </div>
 
             @if (!Model.Any())
             {
                 <div class="alert alert-info" role="alert">
                     <h4 class="alert-heading">No Boards Found</h4>
-                    <p>No boards have been created yet.</p>
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <hr>
-                        <p class="mb-0">
-                            <a asp-action="Create" class="btn btn-primary">Create Your First Board</a>
-                        </p>
-                    }
+                    <p>Get started by creating your first board.</p>
+                    <hr>
+                    <p class="mb-0">
+                        <a asp-action="Create" class="btn btn-primary">
+                            <i class="bi bi-plus-circle"></i> Create Your First Board
+                        </a>
+                    </p>
                 </div>
             }
             else
