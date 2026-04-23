@@ -1,15 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Dashboard";
+    ViewData["Title"] = "Dashboard"; // Page title in browser tab
 }
 
+<!-- Show welcome message only for non-authenticated users -->
 @if (!User.Identity.IsAuthenticated)
 {
     <div class="premium-alert premium-alert-info alert-dismissible fade show mb-5" role="alert">
         <div class="d-flex align-items-center">
+
+            <!-- Info icon -->
             <i class="bi bi-info-circle-fill fs-4 me-3"></i>
             <div>
+
+                <!-- Welcome heading -->
                 <h5 class="alert-heading mb-1">Welcome to TaskFlow!</h5>
+
+                <!-- Short description -->
                 <p class="mb-2">Organize your tasks in boards, lists and cards (Trello-style).</p>
+
+                <!-- Authentication buttons -->
                 <div class="mt-3">
                     <a href="/Account/Login" class="premium-btn premium-btn-primary me-2">
                         <i class="bi bi-box-arrow-in-right"></i> Sign In
@@ -20,6 +29,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Close button for alert -->
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
 }
@@ -27,10 +38,14 @@
 <div class="row mb-5">
     <div class="col-12">
         <div class="text-center mb-5">
+
+            <!-- Main title -->
             <h1 class="display-4 fw-bold text-gradient mb-3">
                 <i class="bi bi-kanban text-primary me-3"></i>
                 TaskFlow Dashboard
             </h1>
+
+            <!-- Subtitle -->
             <p class="lead text-muted">Streamline your workflow with our intuitive project management platform</p>
         </div>
     </div>
@@ -38,6 +53,8 @@
 
 <!-- Statistics Cards -->
 <div class="row g-4 mb-5">
+
+    <!-- Total tasks -->
     <div class="col-xl-3 col-lg-6 col-md-6">
         <div class="stats-card stats-primary h-100">
             <div class="stats-icon">
@@ -48,6 +65,8 @@
             <div class="stats-description">All tasks in your workspace</div>
         </div>
     </div>
+
+    <!-- Completed tasks -->
     <div class="col-xl-3 col-lg-6 col-md-6">
         <div class="stats-card stats-success h-100">
             <div class="stats-icon">
@@ -58,6 +77,8 @@
             <div class="stats-description">Tasks successfully finished</div>
         </div>
     </div>
+
+    <!-- Completion percentage -->
     <div class="col-xl-3 col-lg-6 col-md-6">
         <div class="stats-card stats-warning h-100">
             <div class="stats-icon">
@@ -68,6 +89,8 @@
             <div class="stats-description">Overall progress percentage</div>
         </div>
     </div>
+
+    <!-- Overdue tasks -->
     <div class="col-xl-3 col-lg-6 col-md-6">
         <div class="stats-card stats-danger h-100">
             <div class="stats-icon">
@@ -84,12 +107,16 @@
 <div class="row mb-5">
     <div class="col-12">
         <div class="premium-card">
+
+            <!-- Section header -->
             <div class="premium-card-header">
                 <i class="bi bi-rocket-takeoff me-2"></i>
                 Quick Actions
             </div>
             <div class="premium-card-body">
                 <div class="row g-3">
+
+                    <!-- Create new board -->
                     <div class="col-md-3 col-sm-6">
                         <a href="@Url.Action("Create", "Board")" class="text-decoration-none">
                             <div class="action-card text-center p-4 rounded-3 border h-100 d-flex flex-column justify-content-center align-items-center" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-color: rgba(102, 126, 234, 0.2); transition: all 0.3s ease;">
@@ -99,6 +126,8 @@
                             </div>
                         </a>
                     </div>
+
+                     <!-- Create new task -->
                     <div class="col-md-3 col-sm-6">
                         <a href="@Url.Action("Create", "Task")" class="text-decoration-none">
                             <div class="action-card text-center p-4 rounded-3 border h-100 d-flex flex-column justify-content-center align-items-center" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%); border-color: rgba(79, 172, 254, 0.2); transition: all 0.3s ease;">
@@ -108,6 +137,8 @@
                             </div>
                         </a>
                     </div>
+
+                    <!-- View boards -->
                     <div class="col-md-3 col-sm-6">
                         <a href="@Url.Action("Index", "Board")" class="text-decoration-none">
                             <div class="action-card text-center p-4 rounded-3 border h-100 d-flex flex-column justify-content-center align-items-center" style="background: linear-gradient(135deg, rgba(250, 112, 154, 0.1) 0%, rgba(254, 225, 64, 0.1) 100%); border-color: rgba(250, 112, 154, 0.2); transition: all 0.3s ease;">
@@ -117,6 +148,8 @@
                             </div>
                         </a>
                     </div>
+
+                    <!-- Analytics -->
                     <div class="col-md-3 col-sm-6">
                         <a href="@Url.Action("Index", "Dashboard")" class="text-decoration-none">
                             <div class="action-card text-center p-4 rounded-3 border h-100 d-flex flex-column justify-content-center align-items-center" style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(238, 90, 36, 0.1) 100%); border-color: rgba(255, 107, 107, 0.2); transition: all 0.3s ease;">
@@ -132,34 +165,45 @@
     </div>
 </div>
 
-<!-- Upcoming Deadlines -->
+<!-- Upcoming deadlines section (only if there are tasks) -->
 @if (ViewBag.UpcomingDeadlines != null && ViewBag.UpcomingDeadlines.Count > 0)
 {
     <div class="row">
         <div class="col-lg-8 mx-auto">
             <div class="premium-card">
+
+                <!-- Header -->
                 <div class="premium-card-header">
                     <i class="bi bi-calendar-event me-2"></i>
                     Upcoming Deadlines
                 </div>
                 <div class="premium-card-body">
                     <div class="row g-3">
+
+                        <!-- Loop through tasks with deadlines -->
                         @foreach (var task in ViewBag.UpcomingDeadlines)
                         {
+                            // Calculate urgency based on days left
                             var daysUntil = (task.Deadline.Value - DateTime.Now).Days;
                             var urgencyClass = daysUntil <= 1 ? "border-danger" : daysUntil <= 3 ? "border-warning" : "border-success";
                             var urgencyBg = daysUntil <= 1 ? "rgba(220, 53, 69, 0.05)" : daysUntil <= 3 ? "rgba(255, 193, 7, 0.05)" : "rgba(25, 135, 84, 0.05)";
                             <div class="col-md-6">
                                 <div class="deadline-item p-3 rounded-3 border-start border-4 @urgencyClass" style="background: @urgencyBg;">
+
+                                    <!-- Task title + urgency badge -->
                                     <div class="d-flex justify-content-between align-items-start mb-2">
                                         <h6 class="mb-1 fw-bold">@task.Title</h6>
                                         <span class="badge @(daysUntil <= 1 ? "bg-danger" : daysUntil <= 3 ? "bg-warning" : "bg-success")">
                                             @daysUntil days
                                         </span>
                                     </div>
+
+                                    <!-- Board name -->
                                     <p class="text-muted small mb-2">
                                         <i class="bi bi-folder me-1"></i>@task.Board.Title
                                     </p>
+
+                                    <!-- Deadline date -->
                                     <div class="text-end">
                                         <small class="text-muted">
                                             <i class="bi bi-calendar me-1"></i>@task.Deadline.Value.ToString("MMM dd, yyyy")
