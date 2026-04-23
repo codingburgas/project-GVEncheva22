@@ -52,26 +52,23 @@
                                         <!-- Board title -->
                                         <h5 class="card-title text-primary mb-0 flex-grow-1">@Html.DisplayFor(modelItem => item.Title)</h5>
 
-                                        <!-- Admin-only dropdown menu -->
+                                        <!-- Board actions -->
                                         <div class="board-menu">
-                                            @if (User.IsInRole("Admin"))
-                                            {
-                                                <div class="dropdown">
+                                            <div class="dropdown">
 
-                                                    <!-- Menu button -->
-                                                    <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="dropdown">
-                                                        <i class="bi bi-three-dots"></i>
-                                                    </button>
+                                                <!-- Menu button -->
+                                                <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="dropdown">
+                                                    <i class="bi bi-three-dots"></i>
+                                                </button>
 
-                                                    <!-- Dropdown actions -->
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i> View Details</a></li>
-                                                        <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil"></i> Edit</a></li>
-                                                        <li><hr class="dropdown-divider"></li>
-                                                        <li><a class="dropdown-item text-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            }
+                                                <!-- Dropdown actions -->
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i> View Details</a></li>
+                                                    <li><a class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil"></i> Edit</a></li>
+                                                    <li><hr class="dropdown-divider"></li>
+                                                    <li><a class="dropdown-item text-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i> Delete</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     

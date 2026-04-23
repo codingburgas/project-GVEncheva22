@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace project_GVEncheva22.Models
 {
@@ -11,6 +12,7 @@ namespace project_GVEncheva22.Models
         [Required]
         public required string UserId { get; set; }
 
+        [ValidateNever]
         public required ApplicationUser User { get; set; }
 
         // Navigation property for related TaskItems

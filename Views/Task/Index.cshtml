@@ -148,6 +148,21 @@
                                         <!-- Action buttons -->
                                         <div class="task-actions">
 
+                                            @if (item.Status != project_GVEncheva22.Models.Status.Done)
+                                            {
+                                                <form asp-action="MarkAsDone"
+                                                      asp-route-id="@item.Id"
+                                                      method="post"
+                                                      class="d-inline me-1">
+                                                    @Html.AntiForgeryToken()
+                                                    <button type="submit"
+                                                            class="btn btn-outline-success btn-sm"
+                                                            title="Mark as Done">
+                                                        <i class="bi bi-check2-circle"></i>
+                                                    </button>
+                                                </form>
+                                            }
+
                                             <!-- View details -->
                                             <a asp-action="Details"
                                                asp-route-id="@item.Id"

@@ -52,9 +52,11 @@ using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
     await dbContext.Database.MigrateAsync();
     await SeedRolesAsync(roleManager);
+    await AssignDefaultUserRoleAsync(userManager);
 }
 
 app.Run();
@@ -68,5 +70,19 @@ async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
     if (!await roleManager.RoleExistsAsync("User"))
     {
         await roleManager.CreateAsync(new IdentityRole("User"));
+    }
+}
+
+async Task AssignDefaultUserRoleAsync(UserManager<ApplicationUser> userManager)
+{
+    var users = userManager.Users.ToList();
+
+    foreach (var user in users)
+    {
+        var roles = await userManager.GetRolesAsync(user);
+        if (roles.Count == 0)
+        {
+            await userManager.AddToRoleAsync(user, "User");
+        }
     }
 }

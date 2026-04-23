@@ -42,7 +42,6 @@ public class BoardController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Create(Board board)
     {
         // Save a new board with the signed-in user's ID.
@@ -52,6 +51,8 @@ public class BoardController : Controller
             return Unauthorized();
         }
         board.UserId = userId;
+        ModelState.Remove(nameof(Board.UserId));
+        ModelState.Remove(nameof(Board.User));
         if (ModelState.IsValid)
         {
             await _boardService.CreateBoardAsync(board);
@@ -73,7 +74,6 @@ public class BoardController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Edit(int id, Board board)
     {
         // Update selected board if IDs match and input is valid.
@@ -87,6 +87,8 @@ public class BoardController : Controller
             return Unauthorized();
         }
         board.UserId = userId;
+        ModelState.Remove(nameof(Board.UserId));
+        ModelState.Remove(nameof(Board.User));
         if (ModelState.IsValid)
         {
             await _boardService.UpdateBoardAsync(board);
@@ -108,7 +110,6 @@ public class BoardController : Controller
 
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
         await _boardService.DeleteBoardAsync(id);

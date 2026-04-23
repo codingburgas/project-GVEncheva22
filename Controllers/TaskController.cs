@@ -45,7 +45,6 @@ public class TaskController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Policy = "AdminOnly")]
     // Create a new task when the form is submitted.
     public async Task<IActionResult> Create(TaskItem task)
     {
@@ -72,7 +71,6 @@ public class TaskController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Policy = "AdminOnly")]
     // Save changes to an existing task.
     public async Task<IActionResult> Edit(int id, TaskItem task)
     {
@@ -89,6 +87,19 @@ public class TaskController : Controller
         return View(task);
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> MarkAsDone(int id)
+    {
+        var task = await _taskService.MarkTaskAsDoneAsync(id);
+        if (task == null)
+        {
+            return NotFound();
+        }
+
+        return RedirectToAction(nameof(Index));
+    }
+
     // Confirm deletion of a task.
     public async Task<IActionResult> Delete(int id)
     {
@@ -102,7 +113,6 @@ public class TaskController : Controller
 
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
-    [Authorize(Policy = "AdminOnly")]
     // Delete the task after confirmation.
     public async Task<IActionResult> DeleteConfirmed(int id)
     {

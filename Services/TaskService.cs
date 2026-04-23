@@ -54,6 +54,17 @@ namespace project_GVEncheva22.Services
             return existing;
         }
 
+        public async Task<TaskItem?> MarkTaskAsDoneAsync(int taskId)
+        {
+            var existing = await _dbContext.TaskItems.FindAsync(taskId);
+            if (existing == null)
+                return null;
+
+            existing.Status = Status.Done;
+            await _dbContext.SaveChangesAsync();
+            return existing;
+        }
+
         // Deletes a task by Id
         public async Task<bool> DeleteTaskAsync(int taskId)
         {

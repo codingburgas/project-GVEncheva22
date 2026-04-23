@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "Log In";
     Layout = null;
+    var postedEmail = Context.Request.HasFormContentType ? Context.Request.Form["email"].ToString() : string.Empty;
 }
 
 <!DOCTYPE html>
@@ -45,24 +46,20 @@
                 <form method="post" asp-action="Login">
 
                     <!-- Displays error message if login fails -->
-                    @if (!ViewData.ModelState.IsValid)
-                    {
-                        <div class="alert alert-danger" role="alert">
-                            <strong>Error!</strong>
-                            <div>Invalid login attempt. Please check your email and password.</div>
-                        </div>
-                    }
+                    <div asp-validation-summary="All" class="auth-feedback" role="alert"></div>
 
                     <!-- Email input field -->
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required autofocus>
+                        <input type="email" class="form-control" id="email" name="email" value="@postedEmail" placeholder="Email address" required autofocus>
                         <label for="email">Email Address</label>
+                        <span class="auth-field-message" data-valmsg-for="email"></span>
                     </div>
 
                     <!-- Password input field -->
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         <label for="password">Password</label>
+                        <span class="auth-field-message" data-valmsg-for="password"></span>
                     </div>
 
                     <!-- Remember me checkbox -->

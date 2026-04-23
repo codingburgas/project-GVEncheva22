@@ -221,10 +221,22 @@
                         </a>
 
                         <!-- Admin-only actions -->
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <div>
+                        <div>
+                            @if (Model.Status != project_GVEncheva22.Models.Status.Done)
+                            {
+                                <form asp-action="MarkAsDone"
+                                      asp-route-id="@Model.Id"
+                                      method="post"
+                                      class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-success me-2">
+                                        <i class="bi bi-check2-circle"></i> Mark as Done
+                                    </button>
+                                </form>
+                            }
 
+                            @if (User.IsInRole("Admin"))
+                            {
                                 <!-- Edit task -->
                                 <a asp-action="Edit"
                                    asp-route-id="@Model.Id"
@@ -238,9 +250,8 @@
                                    class="btn btn-danger">
                                     <i class="fas fa-trash"></i> Delete
                                 </a>
-
-                            </div>
-                        }
+                            }
+                        </div>
 
                     </div>
 

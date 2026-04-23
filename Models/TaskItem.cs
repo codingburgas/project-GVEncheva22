@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace project_GVEncheva22.Models
 {
@@ -31,6 +32,7 @@ namespace project_GVEncheva22.Models
         public int BoardId { get; set; }
 
         // Navigation property to access the related Board entity
+        [ValidateNever]
         public required Board Board { get; set; }
     }
 }

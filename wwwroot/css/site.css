@@ -1110,15 +1110,16 @@ small, .text-muted {
 
 /* Form Validation */
 .premium-validation-error {
-  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(238, 90, 36, 0.1) 100%);
-  color: #dc3545;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius-sm);
-  border-left: 4px solid #dc3545;
-  font-size: 0.9rem;
+  display: block;
+  color: #6b7280;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  font-size: 0.85rem;
   font-weight: 500;
   margin-top: var(--spacing-xs);
-  backdrop-filter: blur(10px);
+  line-height: 1.4;
 }
 
 .premium-validation-error:empty,
@@ -1938,6 +1939,44 @@ body.login-page {
   border-color: #dc3545;
   box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.15), 
               0 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+/* Auth page feedback: visible, but soft and neutral */
+body.login-page .auth-feedback {
+  display: none;
+  background: rgba(99, 102, 241, 0.08);
+  color: #374151;
+  border: 1px solid rgba(99, 102, 241, 0.16);
+  border-left: 4px solid #667eea;
+  border-radius: 0.75rem;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: none;
+}
+
+body.login-page .auth-feedback.validation-summary-errors {
+  display: block;
+}
+
+body.login-page .auth-feedback ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+body.login-page .auth-feedback li {
+  margin: 0.2rem 0;
+}
+
+body.login-page .auth-field-message {
+  display: none;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+body.login-page .auth-field-message.field-validation-error {
+  display: block;
 }
 
 /* Responsive Adjustments */
