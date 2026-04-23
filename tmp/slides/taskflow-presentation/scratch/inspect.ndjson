@@ -1,0 +1,187 @@
+{"kind":"deck","id":"taskflow-presentation","slideCount":6,"slideSize":{"width":1280,"height":720}}
+{"kind":"slide","slide":1,"id":"nlx8no"}
+{"kind":"slide","slide":2,"id":"a17rlr"}
+{"kind":"slide","slide":3,"id":"kvslbu"}
+{"kind":"slide","slide":4,"id":"u9tg9m"}
+{"kind":"slide","slide":5,"id":"f3mx4q"}
+{"kind":"slide","slide":6,"id":"phss88"}
+{"kind":"image","slide":1,"id":"1","role":"fallback art plate","path":"fallback-data-url","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":1,"id":"2","role":"cover contrast overlay","shapeType":"rect","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":1,"id":"3","role":"cover side panel","shapeType":"roundRect","bbox":[820,0,460,720]}
+{"kind":"shape","slide":1,"id":"4","role":"cover decor circle","shapeType":"ellipse","bbox":[910,110,220,220]}
+{"kind":"shape","slide":1,"id":"5","role":"cover decor circle","shapeType":"ellipse","bbox":[1050,210,120,120]}
+{"kind":"shape","slide":1,"id":"6","role":"cover decor card","shapeType":"roundRect","bbox":[884,360,250,120]}
+{"kind":"shape","slide":1,"id":"7","role":"cover decor card","shapeType":"roundRect","bbox":[930,510,180,84]}
+{"kind":"shape","slide":1,"id":"8","role":"cover accent rule","shapeType":"rect","bbox":[64,86,7,455]}
+{"kind":"textbox","slide":1,"id":"9","role":"kicker","text":"TASK MANAGER PROJECT","textPreview":"TASK MANAGER PROJECT","textChars":20,"textLines":1,"bbox":[86,88,520,26]}
+{"kind":"textbox","slide":1,"id":"10","role":"cover title","text":"TaskFlow","textPreview":"TaskFlow","textChars":8,"textLines":1,"bbox":[82,130,785,184]}
+{"kind":"textbox","slide":1,"id":"11","role":"cover subtitle","text":"A web-based Kanban-inspired project and task management system built with ASP.NET Core MVC.","textPreview":"A web-based Kanban-inspired project and task management system built with ASP.NET Core MVC.","textChars":91,"textLines":1,"bbox":[86,326,610,86]}
+{"kind":"shape","slide":1,"id":"12","role":"cover moment panel","shapeType":"roundRect","bbox":[86,456,390,92]}
+{"kind":"textbox","slide":1,"id":"13","role":"cover moment","text":"Organize boards, tasks, priorities, and deadlines in one place.","textPreview":"Organize boards, tasks, priorities, and deadlines in one place.","textChars":63,"textLines":1,"bbox":[112,478,336,40]}
+{"kind":"textbox","slide":1,"id":"14","role":"cover side keywords","text":"Boards\nTasks\nDeadlines\nDashboard","textPreview":"Boards | Tasks | Deadlines | Dashboard","textChars":32,"textLines":4,"bbox":[900,376,180,140]}
+{"kind":"textbox","slide":1,"id":"15","role":"caption","text":"TaskFlow MVC | Project presentation summary","textPreview":"TaskFlow MVC | Project presentation summary","textChars":43,"textLines":1,"bbox":[64,674,980,22]}
+{"kind":"image","slide":2,"id":"1","role":"fallback art plate","path":"fallback-data-url","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":2,"id":"2","role":"content contrast overlay","shapeType":"rect","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":2,"id":"3","role":"side rail","shapeType":"roundRect","bbox":[990,84,210,560]}
+{"kind":"shape","slide":2,"id":"4","role":"side decor","shapeType":"ellipse","bbox":[1040,120,110,110]}
+{"kind":"shape","slide":2,"id":"5","role":"side decor","shapeType":"ellipse","bbox":[1080,518,72,72]}
+{"kind":"textbox","slide":2,"id":"6","role":"header","text":"PROJECT OVERVIEW","textPreview":"PROJECT OVERVIEW","textChars":16,"textLines":1,"bbox":[64,34,430,24]}
+{"kind":"textbox","slide":2,"id":"7","role":"header","text":"02 / 06","textPreview":"02 / 06","textChars":7,"textLines":1,"bbox":[1114,34,104,24]}
+{"kind":"shape","slide":2,"id":"8","role":"header rule","shapeType":"rect","bbox":[64,64,1152,2]}
+{"kind":"shape","slide":2,"id":"9","role":"header marker","shapeType":"ellipse","bbox":[57,57,16,16]}
+{"kind":"textbox","slide":2,"id":"10","role":"title","text":"What is TaskFlow?","textPreview":"What is TaskFlow?","textChars":17,"textLines":1,"bbox":[64,86,760,142]}
+{"kind":"textbox","slide":2,"id":"11","role":"subtitle","text":"TaskFlow is designed to help users plan work visually through boards and tasks while tracking progress in a clear and structured way.","textPreview":"TaskFlow is designed to help users plan work visually through boards and tasks while tracking progress in a clear and structured way.","textChars":133,"textLines":1,"bbox":[66,234,720,70]}
+{"kind":"shape","slide":2,"id":"12","role":"card panel: Main Goal","shapeType":"roundRect","bbox":[84,404,355.3333333333333,198]}
+{"kind":"shape","slide":2,"id":"13","role":"card accent: Main Goal","shapeType":"rect","bbox":[84,404,8,198]}
+{"kind":"shape","slide":2,"id":"14","role":"icon badge","shapeType":"ellipse","bbox":[106,428,54,54]}
+{"kind":"shape","slide":2,"id":"15","role":"icon glyph","shapeType":"rect","bbox":[122,457,6,12]}
+{"kind":"shape","slide":2,"id":"16","role":"icon glyph","shapeType":"rect","bbox":[131,449,6,20]}
+{"kind":"shape","slide":2,"id":"17","role":"icon glyph","shapeType":"rect","bbox":[140,442,6,27]}
+{"kind":"textbox","slide":2,"id":"18","role":"card label","text":"Main Goal","textPreview":"Main Goal","textChars":9,"textLines":1,"bbox":[172,426,247.33333333333331,28]}
+{"kind":"textbox","slide":2,"id":"19","role":"card body: Main Goal","text":"Develop a web application\nfor project and task\nmanagement inspired by\nTrello and the Kanban\nmethodology.","textPreview":"Develop a web application | for project and task | management inspired by | Trello and the Kanban | methodology.","textChars":104,"textLines":5,"bbox":[108,490,307.3333333333333,90]}
+{"kind":"shape","slide":2,"id":"20","role":"card panel: Core Idea","shapeType":"roundRect","bbox":[463.3333333333333,404,355.3333333333333,198]}
+{"kind":"shape","slide":2,"id":"21","role":"card accent: Core Idea","shapeType":"rect","bbox":[463.3333333333333,404,8,198]}
+{"kind":"shape","slide":2,"id":"22","role":"icon badge","shapeType":"ellipse","bbox":[485.3333333333333,428,54,54]}
+{"kind":"shape","slide":2,"id":"23","role":"icon glyph","shapeType":"ellipse","bbox":[498.3333333333333,446,10,10]}
+{"kind":"shape","slide":2,"id":"24","role":"icon glyph","shapeType":"ellipse","bbox":[516.3333333333333,455,10,10]}
+{"kind":"shape","slide":2,"id":"25","role":"icon glyph","shapeType":"rect","bbox":[507.3333333333333,453,19,3]}
+{"kind":"textbox","slide":2,"id":"26","role":"card label","text":"Core Idea","textPreview":"Core Idea","textChars":9,"textLines":1,"bbox":[551.3333333333333,426,247.33333333333331,28]}
+{"kind":"textbox","slide":2,"id":"27","role":"card body: Core Idea","text":"Users can create boards, add\ntasks, assign priorities,\ndefine deadlines, and\nmonitor status from To Do to\nDone.","textPreview":"Users can create boards, add | tasks, assign priorities, | define deadlines, and | monitor status from To Do to | Done.","textChars":111,"textLines":5,"bbox":[487.3333333333333,490,307.3333333333333,90]}
+{"kind":"shape","slide":2,"id":"28","role":"card panel: User Value","shapeType":"roundRect","bbox":[842.6666666666666,404,355.3333333333333,198]}
+{"kind":"shape","slide":2,"id":"29","role":"card accent: User Value","shapeType":"rect","bbox":[842.6666666666666,404,8,198]}
+{"kind":"shape","slide":2,"id":"30","role":"icon badge","shapeType":"ellipse","bbox":[864.6666666666666,428,54,54]}
+{"kind":"shape","slide":2,"id":"31","role":"icon glyph","shapeType":"roundRect","bbox":[877.6666666666666,443,26,13]}
+{"kind":"shape","slide":2,"id":"32","role":"icon glyph","shapeType":"roundRect","bbox":[882.6666666666666,452,26,13]}
+{"kind":"shape","slide":2,"id":"33","role":"icon glyph","shapeType":"roundRect","bbox":[887.6666666666666,461,20,10]}
+{"kind":"textbox","slide":2,"id":"34","role":"card label","text":"User Value","textPreview":"User Value","textChars":10,"textLines":1,"bbox":[930.6666666666666,426,247.33333333333331,28]}
+{"kind":"textbox","slide":2,"id":"35","role":"card body: User Value","text":"The system improves\norganization, visibility,\nand productivity through\nsimple navigation and\npractical task tracking.","textPreview":"The system improves | organization, visibility, | and productivity through | simple navigation and | practical task tracking.","textChars":117,"textLines":5,"bbox":[866.6666666666666,490,307.3333333333333,90]}
+{"kind":"textbox","slide":2,"id":"36","role":"side summary","text":"Clean workflow\nRole-based access\nFast navigation","textPreview":"Clean workflow | Role-based access | Fast navigation","textChars":48,"textLines":3,"bbox":[1022,268,148,126]}
+{"kind":"textbox","slide":2,"id":"37","role":"caption","text":"TaskFlow MVC | Project presentation summary","textPreview":"TaskFlow MVC | Project presentation summary","textChars":43,"textLines":1,"bbox":[64,674,980,22]}
+{"kind":"image","slide":3,"id":"1","role":"fallback art plate","path":"fallback-data-url","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":3,"id":"2","role":"metrics contrast overlay","shapeType":"rect","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":3,"id":"3","role":"metrics stage","shapeType":"roundRect","bbox":[62,250,1156,358]}
+{"kind":"textbox","slide":3,"id":"4","role":"header","text":"FUNCTIONAL FEATURES","textPreview":"FUNCTIONAL FEATURES","textChars":19,"textLines":1,"bbox":[64,34,430,24]}
+{"kind":"textbox","slide":3,"id":"5","role":"header","text":"03 / 06","textPreview":"03 / 06","textChars":7,"textLines":1,"bbox":[1114,34,104,24]}
+{"kind":"shape","slide":3,"id":"6","role":"header rule","shapeType":"rect","bbox":[64,64,1152,2]}
+{"kind":"shape","slide":3,"id":"7","role":"header marker","shapeType":"ellipse","bbox":[57,57,16,16]}
+{"kind":"textbox","slide":3,"id":"8","role":"title","text":"Main Functionalities","textPreview":"Main Functionalities","textChars":20,"textLines":1,"bbox":[64,86,700,142]}
+{"kind":"textbox","slide":3,"id":"9","role":"subtitle","text":"The application covers the key requirements of the assignment through task organization, board management, and reporting views.","textPreview":"The application covers the key requirements of the assignment through task organization, board management, and reporting views.","textChars":127,"textLines":1,"bbox":[66,234,700,70]}
+{"kind":"shape","slide":3,"id":"10","role":"metric panel: Boards and Tasks","shapeType":"roundRect","bbox":[92,404,330,174]}
+{"kind":"shape","slide":3,"id":"11","role":"metric accent: Boards and Tasks","shapeType":"rect","bbox":[92,404,330,7]}
+{"kind":"textbox","slide":3,"id":"12","role":"metric value","text":"CRUD","textPreview":"CRUD","textChars":4,"textLines":1,"bbox":[114,428,286,54]}
+{"kind":"textbox","slide":3,"id":"13","role":"metric label","text":"Boards and Tasks","textPreview":"Boards and Tasks","textChars":16,"textLines":1,"bbox":[116,486,282,38]}
+{"kind":"textbox","slide":3,"id":"14","role":"metric note","text":"Create, read, update, and delete actions are implemented for the main entities.","textPreview":"Create, read, update, and delete actions are implemented for the main entities.","textChars":79,"textLines":1,"bbox":[116,536,282,22]}
+{"kind":"shape","slide":3,"id":"15","role":"metric panel: Task Statuses","shapeType":"roundRect","bbox":[462,404,330,174]}
+{"kind":"shape","slide":3,"id":"16","role":"metric accent: Task Statuses","shapeType":"rect","bbox":[462,404,330,7]}
+{"kind":"textbox","slide":3,"id":"17","role":"metric value","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[484,428,286,54]}
+{"kind":"textbox","slide":3,"id":"18","role":"metric label","text":"Task Statuses","textPreview":"Task Statuses","textChars":13,"textLines":1,"bbox":[486,486,282,38]}
+{"kind":"textbox","slide":3,"id":"19","role":"metric note","text":"Tasks can move through To Do, In Progress, and Done states.","textPreview":"Tasks can move through To Do, In Progress, and Done states.","textChars":59,"textLines":1,"bbox":[486,536,282,22]}
+{"kind":"shape","slide":3,"id":"20","role":"metric panel: Deadline View","shapeType":"roundRect","bbox":[832,404,330,174]}
+{"kind":"shape","slide":3,"id":"21","role":"metric accent: Deadline View","shapeType":"rect","bbox":[832,404,330,7]}
+{"kind":"textbox","slide":3,"id":"22","role":"metric value","text":"7 DAYS","textPreview":"7 DAYS","textChars":6,"textLines":1,"bbox":[854,428,286,54]}
+{"kind":"textbox","slide":3,"id":"23","role":"metric label","text":"Deadline View","textPreview":"Deadline View","textChars":13,"textLines":1,"bbox":[856,486,282,38]}
+{"kind":"textbox","slide":3,"id":"24","role":"metric note","text":"Dashboard cards and upcoming deadline tracking help users identify urgent work.","textPreview":"Dashboard cards and upcoming deadline tracking help users identify urgent work.","textChars":79,"textLines":1,"bbox":[856,536,282,22]}
+{"kind":"shape","slide":3,"id":"25","role":"metrics decor","shapeType":"ellipse","bbox":[1035,130,92,92]}
+{"kind":"shape","slide":3,"id":"26","role":"metrics decor","shapeType":"ellipse","bbox":[1110,190,48,48]}
+{"kind":"textbox","slide":3,"id":"27","role":"caption","text":"TaskFlow MVC | Project presentation summary","textPreview":"TaskFlow MVC | Project presentation summary","textChars":43,"textLines":1,"bbox":[64,674,980,22]}
+{"kind":"image","slide":4,"id":"1","role":"fallback art plate","path":"fallback-data-url","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":4,"id":"2","role":"content contrast overlay","shapeType":"rect","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":4,"id":"3","role":"side rail","shapeType":"roundRect","bbox":[990,84,210,560]}
+{"kind":"shape","slide":4,"id":"4","role":"side decor","shapeType":"ellipse","bbox":[1040,120,110,110]}
+{"kind":"shape","slide":4,"id":"5","role":"side decor","shapeType":"ellipse","bbox":[1080,518,72,72]}
+{"kind":"textbox","slide":4,"id":"6","role":"header","text":"ARCHITECTURE","textPreview":"ARCHITECTURE","textChars":12,"textLines":1,"bbox":[64,34,430,24]}
+{"kind":"textbox","slide":4,"id":"7","role":"header","text":"04 / 06","textPreview":"04 / 06","textChars":7,"textLines":1,"bbox":[1114,34,104,24]}
+{"kind":"shape","slide":4,"id":"8","role":"header rule","shapeType":"rect","bbox":[64,64,1152,2]}
+{"kind":"shape","slide":4,"id":"9","role":"header marker","shapeType":"ellipse","bbox":[57,57,16,16]}
+{"kind":"textbox","slide":4,"id":"10","role":"title","text":"Software Structure and Data Layer","textPreview":"Software Structure and Data Layer","textChars":33,"textLines":1,"bbox":[64,86,760,142]}
+{"kind":"textbox","slide":4,"id":"11","role":"subtitle","text":"The project follows layered MVC principles and demonstrates object-oriented design together with persistent database storage.","textPreview":"The project follows layered MVC principles and demonstrates object-oriented design together with persistent database storage.","textChars":125,"textLines":1,"bbox":[66,234,720,70]}
+{"kind":"shape","slide":4,"id":"12","role":"card panel: MVC Pattern","shapeType":"roundRect","bbox":[84,404,355.3333333333333,198]}
+{"kind":"shape","slide":4,"id":"13","role":"card accent: MVC Pattern","shapeType":"rect","bbox":[84,404,8,198]}
+{"kind":"shape","slide":4,"id":"14","role":"icon badge","shapeType":"ellipse","bbox":[106,428,54,54]}
+{"kind":"shape","slide":4,"id":"15","role":"icon glyph","shapeType":"rect","bbox":[122,457,6,12]}
+{"kind":"shape","slide":4,"id":"16","role":"icon glyph","shapeType":"rect","bbox":[131,449,6,20]}
+{"kind":"shape","slide":4,"id":"17","role":"icon glyph","shapeType":"rect","bbox":[140,442,6,27]}
+{"kind":"textbox","slide":4,"id":"18","role":"card label","text":"MVC Pattern","textPreview":"MVC Pattern","textChars":11,"textLines":1,"bbox":[172,426,247.33333333333331,28]}
+{"kind":"textbox","slide":4,"id":"19","role":"card body: MVC Pattern","text":"Controllers, models,\nservices, and Razor views\nare separated to keep\nresponsibilities clear and\nmaintainable.","textPreview":"Controllers, models, | services, and Razor views | are separated to keep | responsibilities clear and | maintainable.","textChars":109,"textLines":5,"bbox":[108,490,307.3333333333333,90]}
+{"kind":"shape","slide":4,"id":"20","role":"card panel: EF Core + SQLite","shapeType":"roundRect","bbox":[463.3333333333333,404,355.3333333333333,198]}
+{"kind":"shape","slide":4,"id":"21","role":"card accent: EF Core + SQLite","shapeType":"rect","bbox":[463.3333333333333,404,8,198]}
+{"kind":"shape","slide":4,"id":"22","role":"icon badge","shapeType":"ellipse","bbox":[485.3333333333333,428,54,54]}
+{"kind":"shape","slide":4,"id":"23","role":"icon glyph","shapeType":"ellipse","bbox":[498.3333333333333,446,10,10]}
+{"kind":"shape","slide":4,"id":"24","role":"icon glyph","shapeType":"ellipse","bbox":[516.3333333333333,455,10,10]}
+{"kind":"shape","slide":4,"id":"25","role":"icon glyph","shapeType":"rect","bbox":[507.3333333333333,453,19,3]}
+{"kind":"textbox","slide":4,"id":"26","role":"card label","text":"EF Core + SQLite","textPreview":"EF Core + SQLite","textChars":16,"textLines":1,"bbox":[551.3333333333333,426,247.33333333333331,28]}
+{"kind":"textbox","slide":4,"id":"27","role":"card body: EF Core + SQLite","text":"The database is created\nthrough Code-First models\nand stores users, boards,\nand tasks permanently.","textPreview":"The database is created | through Code-First models | and stores users, boards, | and tasks permanently.","textChars":98,"textLines":4,"bbox":[487.3333333333333,490,307.3333333333333,90]}
+{"kind":"shape","slide":4,"id":"28","role":"card panel: OOP Principles","shapeType":"roundRect","bbox":[842.6666666666666,404,355.3333333333333,198]}
+{"kind":"shape","slide":4,"id":"29","role":"card accent: OOP Principles","shapeType":"rect","bbox":[842.6666666666666,404,8,198]}
+{"kind":"shape","slide":4,"id":"30","role":"icon badge","shapeType":"ellipse","bbox":[864.6666666666666,428,54,54]}
+{"kind":"shape","slide":4,"id":"31","role":"icon glyph","shapeType":"roundRect","bbox":[877.6666666666666,443,26,13]}
+{"kind":"shape","slide":4,"id":"32","role":"icon glyph","shapeType":"roundRect","bbox":[882.6666666666666,452,26,13]}
+{"kind":"shape","slide":4,"id":"33","role":"icon glyph","shapeType":"roundRect","bbox":[887.6666666666666,461,20,10]}
+{"kind":"textbox","slide":4,"id":"34","role":"card label","text":"OOP Principles","textPreview":"OOP Principles","textChars":14,"textLines":1,"bbox":[930.6666666666666,426,247.33333333333331,28]}
+{"kind":"textbox","slide":4,"id":"35","role":"card body: OOP Principles","text":"BaseEntity, interfaces,\ninheritance, encapsulation,\nand service abstraction are\nused throughout the project.","textPreview":"BaseEntity, interfaces, | inheritance, encapsulation, | and service abstraction are | used throughout the project.","textChars":108,"textLines":4,"bbox":[866.6666666666666,490,307.3333333333333,90]}
+{"kind":"textbox","slide":4,"id":"36","role":"side summary","text":"Clean workflow\nRole-based access\nFast navigation","textPreview":"Clean workflow | Role-based access | Fast navigation","textChars":48,"textLines":3,"bbox":[1022,268,148,126]}
+{"kind":"textbox","slide":4,"id":"37","role":"caption","text":"TaskFlow MVC | Project presentation summary","textPreview":"TaskFlow MVC | Project presentation summary","textChars":43,"textLines":1,"bbox":[64,674,980,22]}
+{"kind":"image","slide":5,"id":"1","role":"fallback art plate","path":"fallback-data-url","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":5,"id":"2","role":"content contrast overlay","shapeType":"rect","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":5,"id":"3","role":"side rail","shapeType":"roundRect","bbox":[990,84,210,560]}
+{"kind":"shape","slide":5,"id":"4","role":"side decor","shapeType":"ellipse","bbox":[1040,120,110,110]}
+{"kind":"shape","slide":5,"id":"5","role":"side decor","shapeType":"ellipse","bbox":[1080,518,72,72]}
+{"kind":"textbox","slide":5,"id":"6","role":"header","text":"SECURITY AND FLOW","textPreview":"SECURITY AND FLOW","textChars":17,"textLines":1,"bbox":[64,34,430,24]}
+{"kind":"textbox","slide":5,"id":"7","role":"header","text":"05 / 06","textPreview":"05 / 06","textChars":7,"textLines":1,"bbox":[1114,34,104,24]}
+{"kind":"shape","slide":5,"id":"8","role":"header rule","shapeType":"rect","bbox":[64,64,1152,2]}
+{"kind":"shape","slide":5,"id":"9","role":"header marker","shapeType":"ellipse","bbox":[57,57,16,16]}
+{"kind":"textbox","slide":5,"id":"10","role":"title","text":"Security, Validation, and User Experience","textPreview":"Security, Validation, and User Experience","textChars":41,"textLines":1,"bbox":[64,86,760,142]}
+{"kind":"textbox","slide":5,"id":"11","role":"subtitle","text":"TaskFlow combines authentication, validation, and a responsive interface to create a secure and usable application.","textPreview":"TaskFlow combines authentication, validation, and a responsive interface to create a secure and usable application.","textChars":115,"textLines":1,"bbox":[66,234,720,70]}
+{"kind":"shape","slide":5,"id":"12","role":"card panel: Authentication","shapeType":"roundRect","bbox":[84,404,355.3333333333333,198]}
+{"kind":"shape","slide":5,"id":"13","role":"card accent: Authentication","shapeType":"rect","bbox":[84,404,8,198]}
+{"kind":"shape","slide":5,"id":"14","role":"icon badge","shapeType":"ellipse","bbox":[106,428,54,54]}
+{"kind":"shape","slide":5,"id":"15","role":"icon glyph","shapeType":"rect","bbox":[122,457,6,12]}
+{"kind":"shape","slide":5,"id":"16","role":"icon glyph","shapeType":"rect","bbox":[131,449,6,20]}
+{"kind":"shape","slide":5,"id":"17","role":"icon glyph","shapeType":"rect","bbox":[140,442,6,27]}
+{"kind":"textbox","slide":5,"id":"18","role":"card label","text":"Authentication","textPreview":"Authentication","textChars":14,"textLines":1,"bbox":[172,426,247.33333333333331,28]}
+{"kind":"textbox","slide":5,"id":"19","role":"card body: Authentication","text":"Users can register and log\nin with ASP.NET Identity,\nwhile role handling supports\nUser and Admin access\nlevels.","textPreview":"Users can register and log | in with ASP.NET Identity, | while role handling supports | User and Admin access | levels.","textChars":111,"textLines":5,"bbox":[108,490,307.3333333333333,90]}
+{"kind":"shape","slide":5,"id":"20","role":"card panel: Validation","shapeType":"roundRect","bbox":[463.3333333333333,404,355.3333333333333,198]}
+{"kind":"shape","slide":5,"id":"21","role":"card accent: Validation","shapeType":"rect","bbox":[463.3333333333333,404,8,198]}
+{"kind":"shape","slide":5,"id":"22","role":"icon badge","shapeType":"ellipse","bbox":[485.3333333333333,428,54,54]}
+{"kind":"shape","slide":5,"id":"23","role":"icon glyph","shapeType":"ellipse","bbox":[498.3333333333333,446,10,10]}
+{"kind":"shape","slide":5,"id":"24","role":"icon glyph","shapeType":"ellipse","bbox":[516.3333333333333,455,10,10]}
+{"kind":"shape","slide":5,"id":"25","role":"icon glyph","shapeType":"rect","bbox":[507.3333333333333,453,19,3]}
+{"kind":"textbox","slide":5,"id":"26","role":"card label","text":"Validation","textPreview":"Validation","textChars":10,"textLines":1,"bbox":[551.3333333333333,426,247.33333333333331,28]}
+{"kind":"textbox","slide":5,"id":"27","role":"card body: Validation","text":"Data Annotations such as\nRequired and StringLength\nprotect the correctness of\ntitles, descriptions, and\nform inputs.","textPreview":"Data Annotations such as | Required and StringLength | protect the correctness of | titles, descriptions, and | form inputs.","textChars":116,"textLines":5,"bbox":[487.3333333333333,490,307.3333333333333,90]}
+{"kind":"shape","slide":5,"id":"28","role":"card panel: UI Design","shapeType":"roundRect","bbox":[842.6666666666666,404,355.3333333333333,198]}
+{"kind":"shape","slide":5,"id":"29","role":"card accent: UI Design","shapeType":"rect","bbox":[842.6666666666666,404,8,198]}
+{"kind":"shape","slide":5,"id":"30","role":"icon badge","shapeType":"ellipse","bbox":[864.6666666666666,428,54,54]}
+{"kind":"shape","slide":5,"id":"31","role":"icon glyph","shapeType":"roundRect","bbox":[877.6666666666666,443,26,13]}
+{"kind":"shape","slide":5,"id":"32","role":"icon glyph","shapeType":"roundRect","bbox":[882.6666666666666,452,26,13]}
+{"kind":"shape","slide":5,"id":"33","role":"icon glyph","shapeType":"roundRect","bbox":[887.6666666666666,461,20,10]}
+{"kind":"textbox","slide":5,"id":"34","role":"card label","text":"UI Design","textPreview":"UI Design","textChars":9,"textLines":1,"bbox":[930.6666666666666,426,247.33333333333331,28]}
+{"kind":"textbox","slide":5,"id":"35","role":"card body: UI Design","text":"Razor views and Bootstrap\nprovide a clean, modern\ninterface for boards, task\ncards, forms, and dashboard\npages.","textPreview":"Razor views and Bootstrap | provide a clean, modern | interface for boards, task | cards, forms, and dashboard | pages.","textChars":111,"textLines":5,"bbox":[866.6666666666666,490,307.3333333333333,90]}
+{"kind":"textbox","slide":5,"id":"36","role":"side summary","text":"Clean workflow\nRole-based access\nFast navigation","textPreview":"Clean workflow | Role-based access | Fast navigation","textChars":48,"textLines":3,"bbox":[1022,268,148,126]}
+{"kind":"textbox","slide":5,"id":"37","role":"caption","text":"TaskFlow MVC | Project presentation summary","textPreview":"TaskFlow MVC | Project presentation summary","textChars":43,"textLines":1,"bbox":[64,674,980,22]}
+{"kind":"image","slide":6,"id":"1","role":"fallback art plate","path":"fallback-data-url","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":6,"id":"2","role":"metrics contrast overlay","shapeType":"rect","bbox":[0,0,1280,720]}
+{"kind":"shape","slide":6,"id":"3","role":"metrics stage","shapeType":"roundRect","bbox":[62,250,1156,358]}
+{"kind":"textbox","slide":6,"id":"4","role":"header","text":"FINAL SUMMARY","textPreview":"FINAL SUMMARY","textChars":13,"textLines":1,"bbox":[64,34,430,24]}
+{"kind":"textbox","slide":6,"id":"5","role":"header","text":"06 / 06","textPreview":"06 / 06","textChars":7,"textLines":1,"bbox":[1114,34,104,24]}
+{"kind":"shape","slide":6,"id":"6","role":"header rule","shapeType":"rect","bbox":[64,64,1152,2]}
+{"kind":"shape","slide":6,"id":"7","role":"header marker","shapeType":"ellipse","bbox":[57,57,16,16]}
+{"kind":"textbox","slide":6,"id":"8","role":"title","text":"TaskFlow in One View","textPreview":"TaskFlow in One View","textChars":20,"textLines":1,"bbox":[64,86,700,142]}
+{"kind":"textbox","slide":6,"id":"9","role":"subtitle","text":"The project successfully combines task management, database persistence, MVC architecture, and role-based security in a complete school software product.","textPreview":"The project successfully combines task management, database persistence, MVC architecture, and role-based security in a complete school software product.","textChars":153,"textLines":1,"bbox":[66,234,700,70]}
+{"kind":"shape","slide":6,"id":"10","role":"metric panel: Web Architecture","shapeType":"roundRect","bbox":[92,404,330,174]}
+{"kind":"shape","slide":6,"id":"11","role":"metric accent: Web Architecture","shapeType":"rect","bbox":[92,404,330,7]}
+{"kind":"textbox","slide":6,"id":"12","role":"metric value","text":"MVC","textPreview":"MVC","textChars":3,"textLines":1,"bbox":[114,428,286,54]}
+{"kind":"textbox","slide":6,"id":"13","role":"metric label","text":"Web Architecture","textPreview":"Web Architecture","textChars":16,"textLines":1,"bbox":[116,486,282,38]}
+{"kind":"textbox","slide":6,"id":"14","role":"metric note","text":"Clear separation of models, views, and controllers.","textPreview":"Clear separation of models, views, and controllers.","textChars":51,"textLines":1,"bbox":[116,536,282,22]}
+{"kind":"shape","slide":6,"id":"15","role":"metric panel: Data Logic","shapeType":"roundRect","bbox":[462,404,330,174]}
+{"kind":"shape","slide":6,"id":"16","role":"metric accent: Data Logic","shapeType":"rect","bbox":[462,404,330,7]}
+{"kind":"textbox","slide":6,"id":"17","role":"metric value","text":"LINQ","textPreview":"LINQ","textChars":4,"textLines":1,"bbox":[484,428,286,54]}
+{"kind":"textbox","slide":6,"id":"18","role":"metric label","text":"Data Logic","textPreview":"Data Logic","textChars":10,"textLines":1,"bbox":[486,486,282,38]}
+{"kind":"textbox","slide":6,"id":"19","role":"metric note","text":"Filtering by priority and grouping by status are built into the system.","textPreview":"Filtering by priority and grouping by status are built into the system.","textChars":71,"textLines":1,"bbox":[486,536,282,22]}
+{"kind":"shape","slide":6,"id":"20","role":"metric panel: Project Outcome","shapeType":"roundRect","bbox":[832,404,330,174]}
+{"kind":"shape","slide":6,"id":"21","role":"metric accent: Project Outcome","shapeType":"rect","bbox":[832,404,330,7]}
+{"kind":"textbox","slide":6,"id":"22","role":"metric value","text":"READY","textPreview":"READY","textChars":5,"textLines":1,"bbox":[854,428,286,54]}
+{"kind":"textbox","slide":6,"id":"23","role":"metric label","text":"Project Outcome","textPreview":"Project Outcome","textChars":15,"textLines":1,"bbox":[856,486,282,38]}
+{"kind":"textbox","slide":6,"id":"24","role":"metric note","text":"TaskFlow delivers the required functionality in English with a polished interface.","textPreview":"TaskFlow delivers the required functionality in English with a polished interface.","textChars":82,"textLines":1,"bbox":[856,536,282,22]}
+{"kind":"shape","slide":6,"id":"25","role":"metrics decor","shapeType":"ellipse","bbox":[1035,130,92,92]}
+{"kind":"shape","slide":6,"id":"26","role":"metrics decor","shapeType":"ellipse","bbox":[1110,190,48,48]}
+{"kind":"textbox","slide":6,"id":"27","role":"caption","text":"TaskFlow MVC | Project presentation summary","textPreview":"TaskFlow MVC | Project presentation summary","textChars":43,"textLines":1,"bbox":[64,674,980,22]}
