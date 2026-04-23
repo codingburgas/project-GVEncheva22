@@ -68,6 +68,12 @@ This project was developed as a school assignment for building a layered MVC app
 - Razor Views
 - Bootstrap
 
+## Presentation
+
+An English project presentation for TaskFlow is included in the repository:
+
+- `docs/TaskFlow.pptx`
+
 ## Project Structure
 
 ```text
