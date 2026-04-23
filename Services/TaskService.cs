@@ -4,10 +4,13 @@ using project_GVEncheva22.Models;
 
 namespace project_GVEncheva22.Services
 {
+    // Service responsible for handling all business logic related to Tasks
+    // Communicates with the database through AppDbContext
     public class TaskService : ITaskService
     {
         private readonly AppDbContext _dbContext;
 
+    // Constructor injection of the database context
         public TaskService(AppDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -23,7 +26,7 @@ namespace project_GVEncheva22.Services
             return await _dbContext.TaskItems.Include(t => t.Board)
                 .FirstOrDefaultAsync(t => t.Id == taskId);
         }
-
+        // Creates a new task and saves it to the database
         public async Task<TaskItem> CreateTaskAsync(TaskItem task)
         {
             task.CreatedAt = DateTime.UtcNow;
@@ -32,12 +35,14 @@ namespace project_GVEncheva22.Services
             return task;
         }
 
+        // Updates an existing task
         public async Task<TaskItem?> UpdateTaskAsync(TaskItem task)
         {
             var existing = await _dbContext.TaskItems.FindAsync(task.Id);
             if (existing == null)
                 return null;
 
+            // Update task properties
             existing.Title = task.Title;
             existing.Description = task.Description;
             existing.Priority = task.Priority;
@@ -49,6 +54,7 @@ namespace project_GVEncheva22.Services
             return existing;
         }
 
+        // Deletes a task by Id
         public async Task<bool> DeleteTaskAsync(int taskId)
         {
             var existing = await _dbContext.TaskItems.FindAsync(taskId);

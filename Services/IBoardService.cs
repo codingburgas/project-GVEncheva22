@@ -2,6 +2,7 @@ using project_GVEncheva22.Models;
 
 namespace project_GVEncheva22.Services
 {
+    // Interface defining operations for managing Boards
     public interface IBoardService
     {
         Task<IEnumerable<Board>> GetAllBoardsAsync();
