@@ -1,4 +1,5 @@
 @{
+    // Sets the page title shown in the browser tab
     ViewData["Title"] = "Register";
     Layout = null;
 }
@@ -7,7 +8,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+
+    <!-- Enables responsive design on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title -->
     <title>@ViewData["Title"] - TaskFlow</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -18,16 +23,23 @@
         }
     </style>
 </head>
+
+<!-- Applies custom styling for login/register pages -->
 <body class="login-page">
     <div class="login-container">
         <div class="login-card">
+
+            <!-- Header section -->
             <div class="login-card-header">
                 <h2>Join TaskFlow</h2>
                 <p>Create your account to get started</p>
             </div>
 
+            <!-- Registration form -->
             <div class="login-card-body">
                 <form method="post" asp-action="Register">
+
+                    <!-- Displays validation errors -->
                     @if (!ViewData.ModelState.IsValid)
                     {
                         <div class="alert alert-danger" role="alert">
@@ -36,21 +48,25 @@
                         </div>
                     }
 
+                    <!-- Email input field -->
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required autofocus>
                         <label for="email">Email Address</label>
                     </div>
 
+                    <!-- Password input field -->
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         <label for="password">Password</label>
                     </div>
 
+                    <!-- Confirm password input field -->
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
                         <label for="confirmPassword">Confirm Password</label>
                     </div>
 
+                    <!-- Submit button -->
                     <button type="submit" class="btn login-btn">
                         <span>Create Account</span>
                     </button>

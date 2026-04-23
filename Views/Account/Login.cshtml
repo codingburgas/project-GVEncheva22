@@ -8,26 +8,43 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title -->
     <title>@ViewData["Title"] - TaskFlow</title>
+
+    <!-- Google font for modern typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Custom site styles -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <!-- Page-specific styling -->
     <style>
         body {
             margin-bottom: 0;
         }
     </style>
 </head>
+
+<!-- Custom class used for login page styling -->
 <body class="login-page">
     <div class="login-container">
         <div class="login-card">
+
+            <!-- Header section with title and subtitle -->
             <div class="login-card-header">
                 <h2>Welcome Back</h2>
                 <p>Sign in to your TaskFlow account</p>
             </div>
 
+            <!-- Login form -->
             <div class="login-card-body">
                 <form method="post" asp-action="Login">
+
+                    <!-- Displays error message if login fails -->
                     @if (!ViewData.ModelState.IsValid)
                     {
                         <div class="alert alert-danger" role="alert">
@@ -36,16 +53,19 @@
                         </div>
                     }
 
+                    <!-- Email input field -->
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required autofocus>
                         <label for="email">Email Address</label>
                     </div>
 
+                    <!-- Password input field -->
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         <label for="password">Password</label>
                     </div>
 
+                    <!-- Remember me checkbox -->
                     <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
                         <label class="form-check-label" for="rememberMe">
@@ -53,10 +73,12 @@
                         </label>
                     </div>
 
+                    <!-- Submit button -->
                     <button type="submit" class="btn login-btn">
                         <span>Sign In</span>
                     </button>
 
+                    <!-- Hidden field for redirecting after login -->
                     <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
                 </form>
             </div>
