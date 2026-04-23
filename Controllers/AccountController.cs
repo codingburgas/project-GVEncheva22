@@ -18,6 +18,7 @@ namespace project_GVEncheva22.Controllers
         [HttpGet]
         public IActionResult Login(string? returnUrl = null)
         {
+            // Show the login page unless the user is already authenticated.
             if (User.Identity?.IsAuthenticated == true)
             {
                 return RedirectToAction("Index", "Home");
@@ -31,6 +32,7 @@ namespace project_GVEncheva22.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(string email, string password, bool rememberMe, string? returnUrl = null)
         {
+            // Process login form submission and sign in the user.
             if (!ModelState.IsValid)
             {
                 return View();
@@ -64,6 +66,7 @@ namespace project_GVEncheva22.Controllers
         [HttpGet]
         public IActionResult Register(string? returnUrl = null)
         {
+            // Show the registration page unless the user is already signed in.
             if (User.Identity?.IsAuthenticated == true)
             {
                 return RedirectToAction("Index", "Home");
@@ -77,6 +80,7 @@ namespace project_GVEncheva22.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(string email, string password, string confirmPassword, string? returnUrl = null)
         {
+            // Handle user registration and sign them in if creation succeeds.
             if (password != confirmPassword)
             {
                 ModelState.AddModelError(string.Empty, "Passwords do not match.");
@@ -93,9 +97,8 @@ namespace project_GVEncheva22.Controllers
 
             if (result.Succeeded)
             {
-                // Assign default role
+                // Assign default role and sign in new user.
                 await _userManager.AddToRoleAsync(user, "User");
-
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToLocal(returnUrl);
             }
@@ -110,6 +113,7 @@ namespace project_GVEncheva22.Controllers
 
         private IActionResult RedirectToLocal(string? returnUrl)
         {
+            // Redirect back to the original URL if it is local, otherwise go home.
             if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);

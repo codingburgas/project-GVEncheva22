@@ -17,6 +17,7 @@ namespace project_GVEncheva22.Controllers
 
         public async Task<IActionResult> Index()
         {
+            // Load task statistics and prepare values for the dashboard view.
             var tasks = await _taskService.GetAllTasksAsync();
             var totalTasks = tasks.Count();
             var completedTasks = tasks.Count(t => t.Status == Status.Done);

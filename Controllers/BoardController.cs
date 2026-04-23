@@ -16,12 +16,14 @@ public class BoardController : Controller
         _boardService = boardService;
     }
 
+    // List all boards for the current user.
     public async Task<IActionResult> Index()
     {
         var boards = await _boardService.GetAllBoardsAsync();
         return View(boards);
     }
 
+    // Show details of a single board by id.
     public async Task<IActionResult> Details(int id)
     {
         var board = await _boardService.GetBoardByIdAsync(id);
@@ -32,6 +34,7 @@ public class BoardController : Controller
         return View(board);
     }
 
+    // Display the form to create a new board.
     public IActionResult Create()
     {
         return View();
@@ -42,6 +45,7 @@ public class BoardController : Controller
     [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Create(Board board)
     {
+        // Save a new board with the signed-in user's ID.
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (userId == null)
         {
@@ -56,6 +60,7 @@ public class BoardController : Controller
         return View(board);
     }
 
+    // Show the edit form for an existing board.
     public async Task<IActionResult> Edit(int id)
     {
         var board = await _boardService.GetBoardByIdAsync(id);
@@ -71,6 +76,7 @@ public class BoardController : Controller
     [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Edit(int id, Board board)
     {
+        // Update selected board if IDs match and input is valid.
         if (id != board.Id)
         {
             return BadRequest();
@@ -89,6 +95,7 @@ public class BoardController : Controller
         return View(board);
     }
 
+    // Confirm deletion of a board.
     public async Task<IActionResult> Delete(int id)
     {
         var board = await _boardService.GetBoardByIdAsync(id);

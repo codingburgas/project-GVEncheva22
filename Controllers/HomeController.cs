@@ -16,6 +16,7 @@ public class HomeController : Controller
         _taskService = taskService;
     }
 
+    // Build summary statistics for the home page from all tasks.
     public async Task<IActionResult> Index()
     {
         var allTasks = await _taskService.GetAllTasksAsync();
@@ -39,12 +40,14 @@ public class HomeController : Controller
         return View();
     }
 
+    // Show the privacy policy page.
     public async Task<IActionResult> Privacy()
     {
         return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    // Render an error view with the current request ID.
     public async Task<IActionResult> Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
