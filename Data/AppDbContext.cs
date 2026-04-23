@@ -11,6 +11,7 @@ namespace project_GVEncheva22.Data
         {
         }
 
+        // Tables for boards and task items in the database.
         public DbSet<Board> Boards { get; set; }
         public DbSet<TaskItem> TaskItems { get; set; }
 
@@ -18,21 +19,21 @@ namespace project_GVEncheva22.Data
         {
             base.OnModelCreating(builder);
 
-            // ApplicationUser -> Board (1-M)
+            // ApplicationUser -> Board (1-M): user owns boards and delete cascades.
             builder.Entity<ApplicationUser>()
                 .HasMany(u => u.Boards)
                 .WithOne(b => b.User)
                 .HasForeignKey(b => b.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Board -> TaskItem (1-M)
+            // Board -> TaskItem (1-M): board owns task items and delete cascades.
             builder.Entity<Board>()
                 .HasMany(b => b.TaskItems)
                 .WithOne(t => t.Board)
                 .HasForeignKey(t => t.BoardId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Configure required fields and lengths via fluent API as backup
+            // Configure field requirements and storage rules.
             builder.Entity<Board>(entity =>
             {
                 entity.Property(x => x.Title).IsRequired().HasMaxLength(100);
