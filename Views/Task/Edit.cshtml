@@ -1,98 +1,195 @@
 @model project_GVEncheva22.Models.TaskItem
 
 @{
-    ViewData["Title"] = "Edit Task";
+    ViewData["Title"] = "Edit Task"; // Page title in browser tab
 }
 
+<!-- Centered layout -->
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
             <nav aria-label="breadcrumb" class="mb-4">
                 <ol class="breadcrumb">
+
+                    <!-- Link to tasks list -->
                     <li class="breadcrumb-item"><a asp-action="Index">Tasks</a></li>
-                    <li class="breadcrumb-item"><a asp-action="Details" asp-route-id="@Model.Id">@Model.Title</a></li>
+
+                    <!-- Link to task details -->
+                    <li class="breadcrumb-item">
+                        <a asp-action="Details" asp-route-id="@Model.Id">@Model.Title</a>
+                    </li>
+
+                    <!-- Current page -->
                     <li class="breadcrumb-item active" aria-current="page">Edit</li>
+
                 </ol>
             </nav>
 
+            <!-- Form card -->
             <div class="card form-card">
+
+                <!-- Header -->
                 <div class="card-header bg-warning text-dark">
                     <h1 class="card-title h4 mb-0">
                         <i class="bi bi-pencil-square"></i> Edit Task
                     </h1>
                 </div>
+
                 <div class="card-body">
+
+                    <!-- Edit form -->
                     <form asp-action="Edit">
-                        <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-4"></div>
+
+                        <!-- Validation summary -->
+                        <div asp-validation-summary="ModelOnly"
+                             class="alert alert-danger mb-4"></div>
+
+                        <!-- Hidden ID field (needed for update) -->
                         <input type="hidden" asp-for="Id" />
 
+                        <!-- Row: Title + Board -->
                         <div class="row g-4">
+
+                            <!-- Task title -->
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label asp-for="Title" class="form-label">Task Title <span class="text-danger">*</span></label>
-                                    <input asp-for="Title" class="form-control" placeholder="Enter a descriptive task title" />
-                                    <span asp-validation-for="Title" class="text-danger small"></span>
+
+                                    <label asp-for="Title" class="form-label">
+                                        Task Title <span class="text-danger">*</span>
+                                    </label>
+
+                                    <input asp-for="Title"
+                                           class="form-control"
+                                           placeholder="Enter a descriptive task title" />
+
+                                    <span asp-validation-for="Title"
+                                          class="text-danger small"></span>
+
                                 </div>
                             </div>
+
+                            <!-- Board selection -->
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label asp-for="BoardId" class="form-label">Select Board <span class="text-danger">*</span></label>
-                                    <select asp-for="BoardId" class="form-select" asp-items="ViewBag.BoardsSelectList">
+
+                                    <label asp-for="BoardId" class="form-label">
+                                        Select Board <span class="text-danger">*</span>
+                                    </label>
+
+                                    <!-- Dropdown from ViewBag -->
+                                    <select asp-for="BoardId"
+                                            class="form-select"
+                                            asp-items="ViewBag.BoardsSelectList">
+
                                         <option value="">Choose a board...</option>
                                     </select>
-                                    <span asp-validation-for="BoardId" class="text-danger small"></span>
+
+                                    <span asp-validation-for="BoardId"
+                                          class="text-danger small"></span>
+
                                 </div>
                             </div>
+
                         </div>
 
+                        <!-- Description -->
                         <div class="mb-3">
-                            <label asp-for="Description" class="form-label">Description <small class="text-muted">(optional)</small></label>
-                            <textarea asp-for="Description" class="form-control" rows="4" placeholder="Describe what needs to be done..."></textarea>
-                            <span asp-validation-for="Description" class="text-danger small"></span>
+
+                            <label asp-for="Description" class="form-label">
+                                Description <small class="text-muted">(optional)</small>
+                            </label>
+
+                            <textarea asp-for="Description"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Describe what needs to be done..."></textarea>
+
+                            <span asp-validation-for="Description"
+                                  class="text-danger small"></span>
+
                         </div>
 
+                        <!-- Row: Priority, Status, Deadline -->
                         <div class="row g-4">
+
+                            <!-- Priority -->
                             <div class="col-md-4">
                                 <div class="mb-3">
+
                                     <label asp-for="Priority" class="form-label">Priority</label>
-                                    <select asp-for="Priority" class="form-select" asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Priority>()"></select>
-                                    <span asp-validation-for="Priority" class="text-danger small"></span>
+
+                                    <select asp-for="Priority"
+                                            class="form-select"
+                                            asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Priority>()">
+                                    </select>
+
+                                    <span asp-validation-for="Priority"
+                                          class="text-danger small"></span>
+
                                 </div>
                             </div>
+
+                            <!-- Status -->
                             <div class="col-md-4">
                                 <div class="mb-3">
+
                                     <label asp-for="Status" class="form-label">Status</label>
-                                    <select asp-for="Status" class="form-select" asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Status>()"></select>
-                                    <span asp-validation-for="Status" class="text-danger small"></span>
+
+                                    <select asp-for="Status"
+                                            class="form-select"
+                                            asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Status>()">
+                                    </select>
+
+                                    <span asp-validation-for="Status"
+                                          class="text-danger small"></span>
+
                                 </div>
                             </div>
+
+                            <!-- Deadline -->
                             <div class="col-md-4">
                                 <div class="mb-3">
+
                                     <label asp-for="Deadline" class="form-label">Deadline</label>
-                                    <input asp-for="Deadline" class="form-control" type="datetime-local" />
-                                    <span asp-validation-for="Deadline" class="text-danger small"></span>
+
+                                    <input asp-for="Deadline"
+                                           class="form-control"
+                                           type="datetime-local" />
+
+                                    <span asp-validation-for="Deadline"
+                                          class="text-danger small"></span>
+
                                 </div>
                             </div>
+
                         </div>
 
+                        <!-- Submit button -->
                         <div class="d-grid gap-2 pt-2">
+
                             <button type="submit" class="btn btn-warning btn-lg">
                                 <i class="bi bi-arrow-clockwise"></i> Save Changes
                             </button>
+
                         </div>
+
                     </form>
+
                 </div>
             </div>
 
+            <!-- Back button -->
             <div class="text-center mt-3">
                 <a asp-action="Index" class="btn btn-outline-secondary">
                     <i class="fas fa-arrow-left"></i> Back to List
                 </a>
             </div>
+
         </div>
     </div>
 </div>
 
+<!-- Client-side validation scripts -->
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

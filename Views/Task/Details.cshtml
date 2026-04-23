@@ -1,34 +1,62 @@
 @model project_GVEncheva22.Models.TaskItem
 
 @{
-    ViewData["Title"] = "Task Details";
+    ViewData["Title"] = "Task Details"; // Page title in browser tab
 }
 
+<!-- Main container -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
+
+            <!-- Breadcrumb navigation -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a asp-action="Index" asp-controller="Task">Tasks</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
+
+                    <!-- Link to tasks list -->
+                    <li class="breadcrumb-item">
+                        <a asp-action="Index" asp-controller="Task">Tasks</a>
+                    </li>
+
+                    <!-- Current task title -->
+                    <li class="breadcrumb-item active" aria-current="page">
+                        @Model.Title
+                    </li>
+
                 </ol>
             </nav>
 
+            <!-- Main task card -->
             <div class="card shadow">
+
+                <!-- Header -->
                 <div class="card-header bg-primary text-white">
                     <h1 class="card-title mb-0">
                         <i class="fas fa-tasks"></i> @Model.Title
                     </h1>
                 </div>
+
+                <!-- Body -->
                 <div class="card-body">
                     <div class="row">
+
+                        <!-- LEFT SIDE: Task information -->
                         <div class="col-md-8">
+
                             <h5 class="text-muted">Task Information</h5>
+
                             <dl class="row">
+
+                                <!-- Title -->
                                 <dt class="col-sm-3">Title</dt>
-                                <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+                                <dd class="col-sm-9">
+                                    @Html.DisplayFor(model => model.Title)
+                                </dd>
+
+                                <!-- Description -->
                                 <dt class="col-sm-3">Description</dt>
                                 <dd class="col-sm-9">
+
                                     @if (!string.IsNullOrEmpty(Model.Description))
                                     {
                                         @Model.Description
@@ -37,10 +65,19 @@
                                     {
                                         <span class="text-muted">No description provided</span>
                                     }
+
                                 </dd>
+
+                                <!-- Priority -->
                                 <dt class="col-sm-3">Priority</dt>
                                 <dd class="col-sm-9">
-                                    <span class="priority-badge badge rounded-pill fs-6 @(Model.Priority == project_GVEncheva22.Models.Priority.High ? "priority-high" : Model.Priority == project_GVEncheva22.Models.Priority.Medium ? "priority-medium" : "priority-low")">
+
+                                    <!-- Priority badge with icons -->
+                                    <span class="priority-badge badge rounded-pill fs-6
+                                        @(Model.Priority == project_GVEncheva22.Models.Priority.High ? "priority-high"
+                                          : Model.Priority == project_GVEncheva22.Models.Priority.Medium ? "priority-medium"
+                                          : "priority-low")">
+
                                         @if (Model.Priority == project_GVEncheva22.Models.Priority.High)
                                         {
                                             <i class="bi bi-exclamation-circle-fill me-1"></i>
@@ -53,28 +90,57 @@
                                         {
                                             <i class="bi bi-check-circle-fill me-1"></i>
                                         }
+
                                         @Model.Priority
                                     </span>
+
                                 </dd>
+
+                                <!-- Status -->
                                 <dt class="col-sm-3">Status</dt>
                                 <dd class="col-sm-9">
-                                    <span class="badge bg-@(Model.Status == project_GVEncheva22.Models.Status.Done ? "success" : Model.Status == project_GVEncheva22.Models.Status.InProgress ? "primary" : "light") fs-6">
+
+                                    <span class="badge bg-@(Model.Status == project_GVEncheva22.Models.Status.Done
+                                        ? "success"
+                                        : Model.Status == project_GVEncheva22.Models.Status.InProgress
+                                        ? "primary"
+                                        : "light") fs-6">
+
                                         @Model.Status
                                     </span>
+
                                 </dd>
+
+                                <!-- Related board -->
                                 <dt class="col-sm-3">Board</dt>
                                 <dd class="col-sm-9">
-                                    <a asp-action="Details" asp-controller="Board" asp-route-id="@Model.BoardId" class="text-decoration-none">
+
+                                    <!-- Link to board details -->
+                                    <a asp-action="Details"
+                                       asp-controller="Board"
+                                       asp-route-id="@Model.BoardId"
+                                       class="text-decoration-none">
+
                                         @Html.DisplayFor(model => model.Board.Title)
                                     </a>
+
                                 </dd>
+
+                                <!-- Deadline -->
                                 <dt class="col-sm-3">Deadline</dt>
                                 <dd class="col-sm-9">
+
                                     @if (Model.Deadline.HasValue)
                                     {
-                                        <span class="@(Model.Deadline < DateTime.Now ? "text-danger fw-bold" : "text-muted")">
+                                        <!-- Red text if overdue -->
+                                        <span class="@(Model.Deadline < DateTime.Now
+                                            ? "text-danger fw-bold"
+                                            : "text-muted")">
+
                                             @Model.Deadline.Value.ToString("dddd, MMMM dd, yyyy 'at' HH:mm")
                                         </span>
+
+                                        <!-- Overdue warning -->
                                         @if (Model.Deadline < DateTime.Now)
                                         {
                                             <small class="text-danger d-block">⚠️ Overdue</small>
@@ -82,55 +148,106 @@
                                     }
                                     else
                                     {
+                                        <!-- No deadline -->
                                         <span class="text-muted">No deadline set</span>
                                     }
+
                                 </dd>
+
+                                <!-- Created date -->
                                 <dt class="col-sm-3">Created</dt>
-                                <dd class="col-sm-9">@Model.CreatedAt.ToString("MMMM dd, yyyy 'at' HH:mm")</dd>
+                                <dd class="col-sm-9">
+                                    @Model.CreatedAt.ToString("MMMM dd, yyyy 'at' HH:mm")
+                                </dd>
+
                             </dl>
+
                         </div>
+
+                        <!-- RIGHT SIDE: Quick statistics -->
                         <div class="col-md-4">
+
                             <h5 class="text-muted">Quick Stats</h5>
+
                             <div class="card bg-light">
                                 <div class="card-body text-center">
+
+                                    <!-- Days since creation -->
                                     <div class="mb-3">
+
                                         <i class="fas fa-calendar-alt fa-2x text-primary mb-2"></i>
+
                                         <div class="h6">Days Since Created</div>
-                                        <div class="h4 text-primary">@((DateTime.Now - Model.CreatedAt).Days)</div>
+
+                                        <div class="h4 text-primary">
+                                            @((DateTime.Now - Model.CreatedAt).Days)
+                                        </div>
+
                                     </div>
+
+                                    <!-- Days until deadline -->
                                     @if (Model.Deadline.HasValue)
                                     {
                                         <hr>
+
                                         <div>
                                             <i class="fas fa-clock fa-2x text-warning mb-2"></i>
+
                                             <div class="h6">Days Until Deadline</div>
-                                            <div class="h4 text-warning">@((Model.Deadline.Value - DateTime.Now).Days)</div>
+
+                                            <div class="h4 text-warning">
+                                                @((Model.Deadline.Value - DateTime.Now).Days)
+                                            </div>
+
                                         </div>
                                     }
+
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
+
+                <!-- Footer actions -->
                 <div class="card-footer">
+
                     <div class="d-flex justify-content-between">
+
+                        <!-- Back button -->
                         <a asp-action="Index" class="btn btn-secondary">
                             <i class="fas fa-arrow-left"></i> Back to List
                         </a>
+
+                        <!-- Admin-only actions -->
                         @if (User.IsInRole("Admin"))
                         {
                             <div>
-                                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning me-2">
+
+                                <!-- Edit task -->
+                                <a asp-action="Edit"
+                                   asp-route-id="@Model.Id"
+                                   class="btn btn-warning me-2">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
-                                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">
+
+                                <!-- Delete task -->
+                                <a asp-action="Delete"
+                                   asp-route-id="@Model.Id"
+                                   class="btn btn-danger">
                                     <i class="fas fa-trash"></i> Delete
                                 </a>
+
                             </div>
                         }
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>

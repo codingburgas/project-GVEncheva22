@@ -1,49 +1,88 @@
 @model project_GVEncheva22.Models.TaskItem
 
 @{
-    ViewData["Title"] = "Delete Task";
+    ViewData["Title"] = "Delete Task"; // Page title in browser tab
 }
 
+<!-- Centered layout container -->
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <nav aria-label="breadcrumb" class="mb-4">
                 <ol class="breadcrumb">
+
+                    <!-- Link to tasks list -->
                     <li class="breadcrumb-item"><a asp-action="Index">Tasks</a></li>
-                    <li class="breadcrumb-item"><a asp-action="Details" asp-route-id="@Model.Id">@Model.Title</a></li>
+
+                    <!-- Link to task details -->
+                    <li class="breadcrumb-item">
+                        <a asp-action="Details" asp-route-id="@Model.Id">@Model.Title</a>
+                    </li>
+
+                    <!-- Current page -->
                     <li class="breadcrumb-item active" aria-current="page">Delete</li>
+
                 </ol>
             </nav>
 
+            <!-- Danger card (delete confirmation UI) -->
             <div class="card shadow border-danger">
+
+                <!-- Header -->
                 <div class="card-header bg-danger text-white">
                     <h1 class="card-title h4 mb-0">
                         <i class="fas fa-exclamation-triangle"></i> Delete Task
                     </h1>
                 </div>
+
+                <!-- Body -->
                 <div class="card-body">
+
+                    <!-- Warning message -->
                     <div class="alert alert-danger" role="alert">
                         <h4 class="alert-heading">⚠️ Warning!</h4>
-                        <p>Are you sure you want to delete this task? This action cannot be undone.</p>
+                        <p>
+                            Are you sure you want to delete this task?
+                            This action cannot be undone.
+                        </p>
                     </div>
 
+                    <!-- Task details before deletion -->
                     <dl class="row">
+
+                        <!-- Title -->
                         <dt class="col-sm-4 fw-bold">Title</dt>
-                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Title)</dd>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Title)
+                        </dd>
+
+                        <!-- Description -->
                         <dt class="col-sm-4 fw-bold">Description</dt>
                         <dd class="col-sm-8">
+
                             @if (!string.IsNullOrEmpty(Model.Description))
                             {
                                 @Model.Description
                             }
                             else
                             {
+                                <!-- If no description exists -->
                                 <span class="text-muted">No description</span>
                             }
+
                         </dd>
+
+                        <!-- Priority -->
                         <dt class="col-sm-4 fw-bold">Priority</dt>
                         <dd class="col-sm-8">
-                            <span class="priority-badge badge rounded-pill @(Model.Priority == project_GVEncheva22.Models.Priority.High ? "priority-high" : Model.Priority == project_GVEncheva22.Models.Priority.Medium ? "priority-medium" : "priority-low")">
+
+                            <!-- Priority badge with different styles -->
+                            <span class="priority-badge badge rounded-pill
+                                @(Model.Priority == project_GVEncheva22.Models.Priority.High ? "priority-high"
+                                  : Model.Priority == project_GVEncheva22.Models.Priority.Medium ? "priority-medium"
+                                  : "priority-low")">
+
+                                <!-- Icon based on priority -->
                                 @if (Model.Priority == project_GVEncheva22.Models.Priority.High)
                                 {
                                     <i class="bi bi-exclamation-circle-fill me-1"></i>
@@ -56,42 +95,79 @@
                                 {
                                     <i class="bi bi-check-circle-fill me-1"></i>
                                 }
+
                                 @Model.Priority
                             </span>
+
                         </dd>
+
+                        <!-- Status -->
                         <dt class="col-sm-4 fw-bold">Status</dt>
                         <dd class="col-sm-8">
-                            <span class="badge bg-@(Model.Status == project_GVEncheva22.Models.Status.Done ? "success" : Model.Status == project_GVEncheva22.Models.Status.InProgress ? "primary" : "light")">
+
+                            <!-- Status badge -->
+                            <span class="badge bg-@(Model.Status == project_GVEncheva22.Models.Status.Done
+                                ? "success"
+                                : Model.Status == project_GVEncheva22.Models.Status.InProgress
+                                ? "primary"
+                                : "light")">
+
                                 @Model.Status
                             </span>
+
                         </dd>
+
+                        <!-- Related board -->
                         <dt class="col-sm-4 fw-bold">Board</dt>
-                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Board.Title)</dd>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Board.Title)
+                        </dd>
+
+                        <!-- Deadline -->
                         <dt class="col-sm-4 fw-bold">Deadline</dt>
                         <dd class="col-sm-8">
+
                             @if (Model.Deadline.HasValue)
                             {
                                 @Model.Deadline.Value.ToString("MMMM dd, yyyy 'at' HH:mm")
                             }
                             else
                             {
+                                <!-- If no deadline -->
                                 <span class="text-muted">No deadline</span>
                             }
+
                         </dd>
+
                     </dl>
+
                 </div>
+
+                <!-- Footer actions -->
                 <div class="card-footer">
+
+                    <!-- Delete confirmation form -->
                     <form asp-action="Delete" class="d-inline">
+
+                        <!-- Hidden task ID -->
                         <input type="hidden" asp-for="Id" />
+
+                        <!-- Confirm delete -->
                         <button type="submit" class="btn btn-danger me-2">
                             <i class="fas fa-trash"></i> Yes, Delete
                         </button>
+
                     </form>
+
+                    <!-- Cancel button -->
                     <a asp-action="Index" class="btn btn-secondary">
                         <i class="fas fa-times"></i> Cancel
                     </a>
+
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>

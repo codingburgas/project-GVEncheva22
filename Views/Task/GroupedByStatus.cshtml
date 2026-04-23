@@ -1,19 +1,28 @@
 @model Dictionary<project_GVEncheva22.Models.Status, IEnumerable<project_GVEncheva22.Models.TaskItem>>
 
 @{
-    ViewData["Title"] = "Tasks Grouped by Status";
+    ViewData["Title"] = "Tasks Grouped by Status"; // Page title in browser tab
 }
 
+<!-- Main container -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
+
+            <!-- Header section -->
             <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <!-- Page title -->
                 <h1 class="text-primary">Tasks Grouped by Status</h1>
                 <div>
+
+                     <!-- Priority filter buttons -->
                     <span class="me-2">Filter by Priority:</span>
                     @foreach (var priority in Enum.GetValues(typeof(project_GVEncheva22.Models.Priority)))
                     {
                         var isSelected = (project_GVEncheva22.Models.Priority)priority == ViewBag.SelectedPriority;
+
+                        <!-- Filter link by priority -->
                         <a href="@Url.Action("GroupedByStatus", new { priority = priority })"
                            class="btn @(isSelected ? "btn-primary" : "btn-outline-primary") btn-sm me-1">
                             @priority
@@ -22,6 +31,7 @@
                 </div>
             </div>
 
+            <!-- If no tasks exist -->
             @if (!Model.Any() || Model.All(g => !g.Value.Any()))
             {
                 <div class="alert alert-info" role="alert">
@@ -31,8 +41,11 @@
             }
             else
             {
+                <!-- Kanban board layout -->
                 <div class="kanban-board">
                     <div class="row g-4">
+
+                        <!-- Loop through each status group -->
                         @foreach (var group in Model)
                         {
                             var statusClass = group.Key == project_GVEncheva22.Models.Status.Done ? "success" :
@@ -42,28 +55,45 @@
                             var statusTitle = group.Key == project_GVEncheva22.Models.Status.Done ? "Done" :
                                              group.Key == project_GVEncheva22.Models.Status.InProgress ? "In Progress" : "To Do";
 
+                            <!-- Column for each status -->
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="kanban-column card h-100">
+
+                                    <!-- Column header -->
                                     <div class="card-header kanban-header bg-light border-bottom-0">
                                         <div class="d-flex justify-content-between align-items-center">
+
+                                            <!-- Status title + icon -->
                                             <h5 class="card-title mb-0 text-dark">
                                                 <i class="@statusIcon me-2 text-@statusClass"></i>
                                                 @statusTitle
                                             </h5>
+
+                                            <!-- Task count -->
                                             <span class="badge bg-@statusClass rounded-pill">@group.Value.Count()</span>
                                         </div>
                                     </div>
+
+                                    <!-- Column body -->
                                     <div class="card-body kanban-body p-3">
                                         @if (group.Value.Any())
                                         {
                                             <div class="kanban-cards">
+
+                                                <!-- Each task card -->
                                                 @foreach (var task in group.Value)
                                                 {
                                                     <div class="kanban-card mb-3 p-3 bg-white rounded shadow-sm">
                                                         <div class="d-flex justify-content-between align-items-start">
                                                             <div class="flex-grow-1">
+
+                                                                <!-- Task title -->
                                                                 <h6 class="mb-1">@task.Title</h6>
+
+                                                                <!-- Board name -->
                                                                 <small class="text-muted">@task.Board.Title</small>
+
+                                                                <!-- Priority badge (only if not Low) -->
                                                                 @if (task.Priority != project_GVEncheva22.Models.Priority.Low)
                                                                 {
                                                                     <br>
@@ -80,6 +110,8 @@
                                                                     </span>
                                                                 }
                                                             </div>
+
+                                                            <!-- View details button -->
                                                             <a asp-action="Details" asp-route-id="@task.Id" class="btn btn-sm btn-outline-primary ms-2">
                                                                 <i class="bi bi-eye"></i>
                                                             </a>
@@ -90,6 +122,7 @@
                                         }
                                         else
                                         {
+                                            <!-- Empty column state -->
                                             <div class="text-center text-muted py-4">
                                                 <i class="bi bi-inbox display-4 mb-2"></i>
                                                 <p>No tasks in this column</p>
@@ -103,6 +136,7 @@
                 </div>
             }
 
+            <!-- Back button -->
             <div class="text-center mt-3">
                 <a asp-action="Index" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i> Back to Task List

@@ -1,100 +1,183 @@
 @model project_GVEncheva22.Models.TaskItem
 
 @{
-    ViewData["Title"] = "Create Task";
+    ViewData["Title"] = "Create Task"; // Page title in browser tab
 }
 
+<!-- Centered layout -->
 <div class="row justify-content-center">
     <div class="col-xl-8 col-lg-10">
         <nav aria-label="breadcrumb" class="mb-4">
             <ol class="breadcrumb">
+
+                <!-- Link to tasks list -->
                 <li class="breadcrumb-item">
                     <a href="@Url.Action("Index", "Task")" class="text-decoration-none">
                         <i class="bi bi-list-check me-1"></i>Tasks
                     </a>
                 </li>
+
+                <!-- Current page -->
                 <li class="breadcrumb-item active" aria-current="page">Create</li>
+
             </ol>
         </nav>
 
+        <!-- Form card -->
         <div class="premium-form-card">
+
+            <!-- Header -->
             <div class="premium-form-header">
                 <i class="bi bi-plus-circle me-3"></i>
                 Create New Task
             </div>
-            <div class="premium-form-body">
-                <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="premium-alert premium-alert-danger mb-4"></div>
 
+            <div class="premium-form-body">
+
+                <!-- Form submission to Create action -->
+                <form asp-action="Create">
+
+                    <!-- Validation summary (model errors) -->
+                    <div asp-validation-summary="ModelOnly"
+                         class="premium-alert premium-alert-danger mb-4"></div>
+
+                    <!-- Row: Title + Board -->
                     <div class="row g-4">
+
+                        <!-- Task title -->
                         <div class="col-md-6">
                             <div class="premium-form-group">
+
                                 <label asp-for="Title" class="premium-label">
                                     Task Title <span class="text-danger">*</span>
                                 </label>
-                                <input asp-for="Title" class="premium-input" placeholder="Enter a descriptive task title" />
-                                <span asp-validation-for="Title" class="premium-validation-error"></span>
+
+                                <input asp-for="Title"
+                                       class="premium-input"
+                                       placeholder="Enter a descriptive task title" />
+
+                                <span asp-validation-for="Title"
+                                      class="premium-validation-error"></span>
+
                             </div>
                         </div>
+
+                        <!-- Board selection -->
                         <div class="col-md-6">
                             <div class="premium-form-group">
+
                                 <label asp-for="BoardId" class="premium-label">
                                     Select Board <span class="text-danger">*</span>
                                 </label>
-                                <select asp-for="BoardId" class="premium-select" asp-items="ViewBag.BoardsSelectList">
+
+                                <!-- Dropdown populated from ViewBag -->
+                                <select asp-for="BoardId"
+                                        class="premium-select"
+                                        asp-items="ViewBag.BoardsSelectList">
+
                                     <option value="">Choose a board...</option>
                                 </select>
-                                <span asp-validation-for="BoardId" class="premium-validation-error"></span>
+
+                                <span asp-validation-for="BoardId"
+                                      class="premium-validation-error"></span>
+
                             </div>
                         </div>
+
                     </div>
 
+                    <!-- Description field -->
                     <div class="premium-form-group">
+
                         <label asp-for="Description" class="premium-label">
                             Description <small class="text-muted">(optional)</small>
                         </label>
-                        <textarea asp-for="Description" class="premium-textarea" rows="4" placeholder="Describe what needs to be done..."></textarea>
-                        <span asp-validation-for="Description" class="premium-validation-error"></span>
+
+                        <textarea asp-for="Description"
+                                  class="premium-textarea"
+                                  rows="4"
+                                  placeholder="Describe what needs to be done...">
+                        </textarea>
+
+                        <span asp-validation-for="Description"
+                              class="premium-validation-error"></span>
+
                     </div>
 
+                    <!-- Row: Priority, Status, Deadline -->
                     <div class="row g-4">
+
+                        <!-- Priority -->
                         <div class="col-md-4">
                             <div class="premium-form-group">
+
                                 <label asp-for="Priority" class="premium-label">Priority</label>
-                                <select asp-for="Priority" class="premium-select" asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Priority>()">
+
+                                <!-- Enum dropdown -->
+                                <select asp-for="Priority"
+                                        class="premium-select"
+                                        asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Priority>()">
                                 </select>
+
                             </div>
                         </div>
+
+                        <!-- Status -->
                         <div class="col-md-4">
                             <div class="premium-form-group">
+
                                 <label asp-for="Status" class="premium-label">Status</label>
-                                <select asp-for="Status" class="premium-select" asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Status>()">
+
+                                <!-- Enum dropdown -->
+                                <select asp-for="Status"
+                                        class="premium-select"
+                                        asp-items="Html.GetEnumSelectList<project_GVEncheva22.Models.Status>()">
                                 </select>
+
                             </div>
                         </div>
+
+                        <!-- Deadline -->
                         <div class="col-md-4">
                             <div class="premium-form-group">
+
                                 <label asp-for="Deadline" class="premium-label">Deadline</label>
-                                <input asp-for="Deadline" class="premium-input" type="datetime-local" />
-                                <span asp-validation-for="Deadline" class="premium-validation-error"></span>
+
+                                <input asp-for="Deadline"
+                                       class="premium-input"
+                                       type="datetime-local" />
+
+                                <span asp-validation-for="Deadline"
+                                      class="premium-validation-error"></span>
+
                             </div>
                         </div>
+
                     </div>
 
+                    <!-- Action buttons -->
                     <div class="d-flex gap-3 justify-content-end mt-4 pt-4 border-top border-light">
-                        <a href="@Url.Action("Index", "Task")" class="premium-btn premium-btn-secondary">
+
+                        <!-- Cancel button -->
+                        <a href="@Url.Action("Index", "Task")"
+                           class="premium-btn premium-btn-secondary">
                             <i class="bi bi-x-circle"></i> Cancel
                         </a>
+
+                        <!-- Submit button -->
                         <button type="submit" class="premium-btn premium-btn-success">
                             <i class="bi bi-check-circle"></i> Create Task
                         </button>
+
                     </div>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Client-side validation scripts -->
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
