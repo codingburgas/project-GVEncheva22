@@ -1121,6 +1121,24 @@ small, .text-muted {
   backdrop-filter: blur(10px);
 }
 
+.premium-validation-error:empty,
+.premium-validation-error.field-validation-valid {
+  display: none;
+}
+
+.premium-label .text-danger {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  color: #dc3545;
+}
+
 .premium-alert {
   border-radius: var(--border-radius-md);
   border: none;
