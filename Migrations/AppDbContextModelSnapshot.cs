@@ -12,6 +12,7 @@ namespace project_GVEncheva22.Migrations
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
     {
+        // Snapshot of the current EF Core model used for future migrations.
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618

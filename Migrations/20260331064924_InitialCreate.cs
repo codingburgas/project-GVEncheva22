@@ -9,6 +9,7 @@ namespace project_GVEncheva22.Migrations
     public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
+        // Apply the initial database schema for identity, boards, and tasks.
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -252,6 +253,7 @@ namespace project_GVEncheva22.Migrations
         }
 
         /// <inheritdoc />
+        // Remove the initial database schema in reverse order.
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

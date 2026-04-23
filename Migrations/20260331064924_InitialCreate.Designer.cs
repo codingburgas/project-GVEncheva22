@@ -15,6 +15,7 @@ namespace project_GVEncheva22.Migrations
     partial class InitialCreate
     {
         /// <inheritdoc />
+        // Describe the target EF Core model for this migration.
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
